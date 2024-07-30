@@ -1,0 +1,13 @@
+Source: getxkblayout
+Section: utils
+Priority: optional
+Maintainer: Sergey Korablin <brs@brs.im>
+Build-Depends: debhelper (>= 10), libx11-dev, libxkbfile-dev
+Standards-Version: 4.1.0
+Homepage: https://github.com/brs-brs/getxkblayout
+
+Package: getxkblayout
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A utility to get the current X keyboard layout
+ This package provides a simple utility to get the current X keyboard layout.
