@@ -11,16 +11,20 @@ void print_help() {
     printf("  -h, --help     Show this help message and exit\n");
     printf("  -l, --long     Output the full name of the layout\n");
     printf("  -s, --short    Output the short name of the layout (default)\n");
+    printf("  -n             Do not output the trailing newline\n");
 }
 
 int main(int argc, char **argv) {
     int long_name = 0;
+    int no_newline = 0;
 
     for (int i = 1; i < argc; i++) {
         if (strcmp(argv[i], "-l") == 0 || strcmp(argv[i], "--long") == 0) {
             long_name = 1;
         } else if (strcmp(argv[i], "-s") == 0 || strcmp(argv[i], "--short") == 0) {
             long_name = 0;
+        } else if (strcmp(argv[i], "-n") == 0) {
+            no_newline = 1;
         } else if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
             print_help();
             return 0;
@@ -81,9 +85,17 @@ int main(int argc, char **argv) {
     }
 
     if (long_name) {
-        printf("%s\n", group);
+        if (no_newline) {
+            printf("%s", group);
+        } else {
+            printf("%s\n", group);
+        }
     } else {
-        printf("%s\n", tok);
+        if (no_newline) {
+            printf("%s", tok);
+        } else {
+            printf("%s\n", tok);
+        }
     }
 
     XFree(group);

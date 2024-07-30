@@ -1,13 +1,19 @@
 .\" Manpage for getxkblayout
 .\" Contact Sergey Korablin <brs@brs.im> for comments and corrections.
-.TH GETXKBLAYOUT 1 "August 2024" "1.0" "getxkblayout man page"
+.TH GETXKBLAYOUT 1 "August 2024" "1.1" "getxkblayout man page"
 .SH NAME
 getxkblayout \- get the current XKB layout
 .SH SYNOPSIS
 .B getxkblayout
-[\fI--long\fR | \fI--short\fR] [\fI--help\fR]
+[\fI--long\fR | \fI--short\fR] [\fI--help\fR] [\fI-n\fR]
 .SH DESCRIPTION
 getxkblayout retrieves and prints the current XKB layout of the X server.
+It connects to the X server, retrieves the current keyboard group and
+layout information, and outputs the layout name in either long or short form.
+
+By default, the short name of the layout is printed. The user can specify
+the format of the output and whether to include a trailing newline using
+the available options.
 .SH OPTIONS
 .TP
 .B \-\-long, -l
@@ -18,5 +24,8 @@ Print the short name of the current layout, e. g. "us".
 .TP
 .B \-\-help, -h
 Show this help message.
+.TP
+.B \-n
+Do not output the trailing newline.
 .SH AUTHOR
 Sergey Korablin <brs@brs.im>
