@@ -4,11 +4,16 @@ LDFLAGS = -lX11 -lxkbfile
 
 SRC_DIR = ./src
 BUILD_DIR = ./build
-INSTALL_DIR = $(DEST_DIR)/usr/bin
+INSTALL_DIR = $(DESTDIR)/usr/bin
+MAN_INSTALL_DIR = $(DESTDIR)/usr/share/man/man1
 
 TARGET = getxkblayout
 SRC = $(SRC_DIR)/getxkblayout.c
 OBJ = $(BUILD_DIR)/$(TARGET)
+
+MAN_FILE = getxkblayout.1
+MAN_SRC = $(SRC_DIR)/$(MAN_FILE)
+MAN_DEST = $(MAN_INSTALL_DIR)/$(MAN_FILE)
 
 DEPENDENCY_HEADER = /usr/include/X11/extensions/XKBrules.h
 
@@ -30,9 +35,11 @@ $(OBJ): $(SRC)
 
 install: $(OBJ)
 	install -D $(OBJ) $(INSTALL_DIR)/$(TARGET)
+	install -D -m 644 $(MAN_SRC) $(MAN_DEST)
 
 uninstall:
 	rm -f $(INSTALL_DIR)/$(TARGET)
+	rm -f $(MAN_DEST)
 
 clean:
 	rm -f $(OBJ)
