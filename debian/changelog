@@ -1,4 +1,4 @@
-getxkblayout (1.0-1) experimental; urgency=low
+getxkblayout (1.0-1) devel; urgency=low
 
   * Initial release.
 

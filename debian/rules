@@ -8,6 +8,9 @@
 
 override_dh_auto_install:
 	make install DEST_DIR=$(CURDIR)/debian/getxkblayout
+	@echo "Installed files in debian/getxkblayout:"
+	@find debian/getxkblayout -type f -print
 
 override_dh_install:
-	dh_install --list-missing
+	dh_install
+	dh_missing --list-missing
