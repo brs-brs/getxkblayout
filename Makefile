@@ -4,7 +4,7 @@ LDFLAGS = -lX11 -lxkbfile
 
 SRC_DIR = ./src
 BUILD_DIR = ./build
-INSTALL_DIR = /usr/local/bin
+INSTALL_DIR = $(DEST_DIR)/usr/local/bin
 
 TARGET = getxkblayout
 SRC = $(SRC_DIR)/getxkblayout.c
