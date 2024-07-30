@@ -2,8 +2,8 @@ CC = gcc
 CFLAGS = -I/usr/include
 LDFLAGS = -lX11 -lxkbfile
 
-SRC_DIR = getxkblayout-1.0
-BUILD_DIR = $(SRC_DIR)
+SRC_DIR = getxkblayout-1.0/src
+BUILD_DIR = getxkblayout-1.0/build
 INSTALL_DIR = /usr/local/bin
 
 TARGET = getxkblayout
