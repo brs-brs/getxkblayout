@@ -8,3 +8,6 @@
 
 override_dh_auto_install:
 	make install DEST_DIR=$(CURDIR)/debian/getxkblayout
+
+override_dh_install:
+	dh_install --list-missing
