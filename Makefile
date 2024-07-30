@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -I/usr/include
+CFLAGS = -I/usr/include -g
 LDFLAGS = -lX11 -lxkbfile
 
 SRC_DIR = ./src
