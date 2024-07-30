@@ -3,7 +3,7 @@ CFLAGS = -I/usr/include
 LDFLAGS = -lX11 -lxkbfile
 
 SRC_DIR = getxkblayout-1.0
-BUILD_DIR = $(SRC_DIR)/src
+BUILD_DIR = $(SRC_DIR)
 INSTALL_DIR = /usr/local/bin
 
 TARGET = getxkblayout
@@ -25,7 +25,6 @@ check-dependency:
 	fi
 
 $(OBJ): $(SRC)
-	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) -o $(OBJ) $(SRC) $(LDFLAGS)
 
 install: $(OBJ)
