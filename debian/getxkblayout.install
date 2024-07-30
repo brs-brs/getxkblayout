@@ -1,2 +1,2 @@
-build/getxkblayout usr/bin/
-src/getxkblayout.1 usr/share/man/man1/
+usr/bin/getxkblayout usr/bin
+usr/share/man/man1/getxkblayout.1 usr/share/man/man1
