@@ -1,0 +1,22 @@
+.\" Manpage for getxkblayout
+.\" Contact Sergey Korablin <brs@brs.im> for comments and corrections.
+.TH GETXKBLAYOUT 1 "August 2024" "1.0" "getxkblayout man page"
+.SH NAME
+getxkblayout \- get the current XKB layout
+.SH SYNOPSIS
+.B getxkblayout
+[\fI--long\fR | \fI--short\fR] [\fI--help\fR]
+.SH DESCRIPTION
+getxkblayout retrieves and prints the current XKB layout of the X server.
+.SH OPTIONS
+.TP
+.B \-\-long, -l
+Print the full name of the current layout, e. g. "English (US)".
+.TP
+.B \-\-short, -s
+Print the short name of the current layout, e. g. "us".
+.TP
+.B \-\-help, -h
+Show this help message.
+.SH AUTHOR
+Sergey Korablin <brs@brs.im>
