@@ -34,8 +34,10 @@ $(OBJ): $(SRC)
 	$(CC) $(CFLAGS) -o $(OBJ) $(SRC) $(LDFLAGS)
 
 install: $(OBJ)
-	install -D $(OBJ) $(INSTALL_DIR)/$(TARGET)
-	install -D -m 644 $(MAN_SRC) $(MAN_DEST)
+	install -d $(INSTALL_DIR)
+	install -m 755 $(OBJ) $(INSTALL_DIR)/$(TARGET)
+	install -d $(MAN_INSTALL_DIR)
+	install -m 644 $(MAN_SRC) $(MAN_DEST)
 
 uninstall:
 	rm -f $(INSTALL_DIR)/$(TARGET)
